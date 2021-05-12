@@ -10,7 +10,7 @@ function getAccEl(cr, im, k) {
 			role: "group",
 			style: {margin: "6px 0px"}
 		},
-		im != undefined ? React.createElement("button", {
+		im != undefined && im != "N/A" ? React.createElement("button", {
 				className: "btn btn-outline-light",
 				type: "button"
 			},
