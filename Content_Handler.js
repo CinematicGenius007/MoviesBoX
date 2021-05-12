@@ -45,7 +45,7 @@ function SearchforResult(page) {
 		}).then(function (results) {
 			if (results.hasOwnProperty('Search')) {
 				for (i = 0; i < results.Search.length; i++) {
-					requests.push($.get('http://www.omdbapi.com/?apikey=bf86a20c&i=' + results.Search[i].imdbID));
+					requests.push($.get('https://www.omdbapi.com/?apikey=bf86a20c&i=' + results.Search[i].imdbID));
 				}
 				$.when.apply($, requests).done(function() {
 					console.log(arguments);
