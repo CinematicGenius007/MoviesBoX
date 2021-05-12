@@ -38,7 +38,7 @@ function SearchforResult(page) {
 		keys = 0;
 
 		jQuery.ajax({
-			url: 'http://www.omdbapi.com/?apikey=bf86a20c&s=' + word + '&page=' + page + parameterRequests, 
+			url: 'https://www.omdbapi.com/?apikey=bf86a20c&s=' + word + '&page=' + page + parameterRequests, 
 			dataType: 'json',
 			cache: true,
 			jsonp: false,
