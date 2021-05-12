@@ -57,10 +57,6 @@
 	align-items: center; 
 	padding: 20px 0px; 
 	margin: 0px;
-	position: fixed;
-	top: 0;
-	z-index: 2;
-	background-color: #212529;
 }
 
 
@@ -68,12 +64,6 @@
 /*SearchButton*/
 #searchbtn1 {
 	display: none;
-}
-
-
-#root {
-	position: relative;
-	top: 100px;
 }
 
 
