@@ -106,7 +106,7 @@ function SearchforResult(page) {
 										React.createElement("div", {className: "item-poster-container"}, 
 											React.createElement("img", {
 													className: "item-poster",
-													src: arguments[k][0].Poster != "N/A" ? arguments[k][0].Poster : "static/noposter.jpg"
+													src: arguments[k][0].Poster != "N/A" ? arguments[k][0].Poster : "noposter.jpg"
 												}
 											)
 										)
@@ -219,7 +219,7 @@ function SearchforResult(page) {
 							key: "1"}, 
 							React.createElement("img", {
 									style : {objectFit: 'contain'},
-									src: 'static/errorinput.png'
+									src: 'errorinput.png'
 								}
 							)
 						)
@@ -240,7 +240,7 @@ function SearchforResult(page) {
 					key: "1"}, //Sorry but you gave wrong input, please try again.
 					React.createElement("img", {
 							style : {objectFit: 'contain'},
-							src: 'static/errorinput.png'
+							src: 'errorinput.png'
 						}
 					)
 				)
