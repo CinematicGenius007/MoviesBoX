@@ -50,11 +50,42 @@
 	cursor: pointer;
 }
 
+/* For initial homePage */
+
+#home-page {
+	background-color: #212529;
+	padding-bottom: 20px;
+}
+
+.sub-container {
+	font-family: 'Segoe UI';
+	background-color: #212529;
+}
+
+
+.content {
+	margin: 30px 0px;
+	letter-spacing: 1px;
+}
+
+.heading {
+	text-decoration: underline;
+	margin: 35px;
+	font-family: 'Scope One', serif;
+}
+
 #header {
 	justify-content: center; 
 	align-items: center; 
 	padding: 20px 0px; 
 	margin: 0px;
+	margin-bottom: 10px;
+}
+
+/*Select*/
+select#searchParameter option {
+	font-family: 'Roboto Sans', sans-serif;
+	font-size: 1.1rem;
 }
 
 /*SearchButton*/
@@ -71,10 +102,27 @@
 	border: 2px solid #35383c;
 	box-shadow: inset 2px 2px 20px 1px #0c0e10, 
 				5px 2px 15px 1px #090a0c;
+				transition: all 0.7s ease;
 }
+
+.each-item-capsule:hover {
+	box-shadow: 5px 2px 15px 1px #090a0c;
+	border-color: #212529;
+	transition: border-color 0.6s ease-in-out, 
+		box-shadow 1s cubic-bezier(0, 0, 1, 1.48) 1.4s;
+	animation: pulse 1.2s cubic-bezier(0.67, 1.42, 0.25, 1) 1;
+}
+
+@keyframes pulse {
+	30%, 70% {
+		box-shadow: 0px 0px 0px 0px #212529;
+	}
+}
+
 
 .item-poster-container{
 	text-align: center;
+	margin: auto;
 }
 .item-poster {
 	src: url("static/noposter.jpg");
@@ -92,6 +140,7 @@
 	outline: none;
 	box-shadow: none;
 }
+
 
 .item-rating button.btn-outline-danger:hover {
 	color: #fff !important;
