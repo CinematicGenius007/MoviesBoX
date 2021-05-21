@@ -1,4 +1,3 @@
-// import errorImg from 'InitialContent.js';
 
 var requests = [];
 var residue = [];
@@ -30,9 +29,6 @@ function SearchforResult(page) {
 			}
 			else if (p1 == 3) {
 				parameterRequests = '&type=series';
-			}
-			else {
-				parameterRequests = '&type=episode';
 			}
 		}
 		keys = 0;
@@ -106,7 +102,7 @@ function SearchforResult(page) {
 										React.createElement("div", {className: "item-poster-container"}, 
 											React.createElement("img", {
 													className: "item-poster",
-													src: arguments[k][0].Poster != "N/A" ? arguments[k][0].Poster : "noposter.jpg"
+													src: arguments[k][0].Poster != "N/A" ? arguments[k][0].Poster : "static/noposter.jpg"
 												}
 											)
 										)
@@ -120,7 +116,7 @@ function SearchforResult(page) {
 											React.createElement("span", null, arguments[k][0].Rated != "N/A" ? arguments[k][0].Rated : "NR"),
 											React.createElement("span", null, " | "), 
 											React.createElement("span", null, movieLength),
-											 React.createElement("span", null, " | "),
+											React.createElement("span", null, " | "),
 											React.createElement("span", null, arguments[k][0].Genre),
 											React.createElement("span", null, " | "), 
 											React.createElement("span", null, arguments[k][0].Released),
@@ -145,11 +141,11 @@ function SearchforResult(page) {
 											React.createElement("span", {style: {fontWeight: "bold"}}, "Cast: "), 
 											React.createElement("span", {style: {marginLeft: "2px"}},
 												arguments[k][0].Actors.length <= 100 ? arguments[k][0].Actors : castCrew + "... etc.")
-										), arguments[k][0].BoxOffice != undefined ? React.createElement("div", {className: "item-box-office", style: {margin: "1px 0px"}}, 
+										), arguments[k][0].BoxOffice != undefined && arguments[k][0].BoxOffice != "N/A" ? React.createElement("div", {className: "item-box-office", style: {margin: "1px 0px"}}, 
 											React.createElement("span", {style: {fontWeight: "bold"}}, "Box Office: "), 
 											React.createElement("span", {style: {marginLeft: "2px"}}, arguments[k][0].BoxOffice)
 										) : null,
-										arguments[k][0].Production != undefined ? React.createElement("div", {className: "item-production", style: {margin: "1px 0px"}}, 
+										arguments[k][0].Production != undefined && arguments[k][0].Production != "N/A" ? React.createElement("div", {className: "item-production", style: {margin: "1px 0px"}}, 
 											React.createElement("span", {style: {fontWeight: "bold"}}, "Production: "), 
 											React.createElement("span", {style: {marginLeft: "2px"}}, arguments[k][0].Production)
 										) : null,
@@ -211,19 +207,7 @@ function SearchforResult(page) {
 			else {
 				document.body.style.backgroundColor = "#fff";
 				ReactDOM.render(
-					React.createElement("div", {className: "errorInput", key: "0"}, 
-						React.createElement("div", {
-							className: "alert alert-warning d-flex align-items-center", 
-							role: "alert", 
-							style: {borderRadius: "0px", justifyContent: "center", overflow: "hidden", margin: "0px"}, 
-							key: "1"}, 
-							React.createElement("img", {
-									style : {objectFit: 'contain'},
-									src: 'errorinput.png'
-								}
-							)
-						)
-					),
+					getErrorCaseForInputResult(),
 					document.getElementById('root')
 				);
 			}
@@ -231,20 +215,7 @@ function SearchforResult(page) {
 	}
 	else {
 		document.body.style.backgroundColor = "#212529";
-		ReactDOM.render(
-			React.createElement("div", {className: "errorInput", key: "0"}, 
-				React.createElement("div", {
-					className: "container-fluid d-flex align-items-center", 
-					role: "alert", 
-					style: {borderRadius: "0px", justifyContent: "center", overflow: "hidden", margin: "0px"}, 
-					key: "1"}, //Sorry but you gave wrong input, please try again.
-					React.createElement("img", {
-							style : {objectFit: 'contain'},
-							src: 'errorinput.png'
-						}
-					)
-				)
-			),
+		ReactDOM.render(getErrorCaseForInput(),
 			document.getElementById('root')
 		);
 	}
