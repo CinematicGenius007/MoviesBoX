@@ -41,7 +41,7 @@ function getErrorCaseForInput() {
 			key: "1"}, //Sorry but you gave wrong input, please try again.
 			React.createElement("img", {
 					style : {objectFit: 'contain'},
-					src: 'static/errorinput.png'
+					src: 'errorinput.png'
 				}
 			)
 		)
@@ -58,7 +58,7 @@ function getErrorCaseForInputResult() {
 			key: "1"}, 
 			React.createElement("img", {
 					style : {objectFit: 'contain'},
-					src: 'static/errorinput.png'
+					src: 'errorinput.png'
 				}
 			)
 		)
@@ -112,7 +112,7 @@ function getTopPicks(argument) {
 					React.createElement("div", {className: "item-poster-container"}, 
 						React.createElement("img", {
 								className: "item-poster",
-								src: argument.Poster != "N/A" ? argument.Poster : "static/noposter.jpg"
+								src: argument.Poster != "N/A" ? argument.Poster : "noposter.jpg"
 							}
 						)
 					)
